@@ -1,0 +1,45 @@
+<div class="card">
+    <div class="card-body">
+
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary px-5">
+                <a class="btn-link" href="dashboard/create-cita">
+                    Nueva Cita
+                </a>
+            </button>
+        </div>
+
+        <br>
+
+        <table class="table mb-0 table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Cliente</th>
+                    <th scope="col">Usuario</th>
+                    <th scope="col">Ventanilla</th>
+                    <th scope="col">Fecha Cita</th>
+                    <th scope="col">Hora</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">Registrada</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let cita of citas">
+                    <td>{{cita.id_clie}}</td>
+                    <td>{{cita.id_usu}}</td>
+                    <td>{{cita.id_ventanilla}}</td>
+                    <td>{{cita.fec_cita}}</td>
+                    <td>{{cita.hora}}</td>
+                    <td>{{cita.estado}}</td>
+                    <td>{{cita.fec_reg}}</td>
+                    <td>
+                        <a href="dashboard/edit-cita/{{cita.id_cita}}">Editar</a>
+                    </td>
+                    <td>
+                        <a class="text-danger" href="dashboard/delete-cita/{{cita.id_cita}}">Eliminar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
