@@ -30,6 +30,8 @@ import { CreateCitaComponent } from './citas/create-cita/create-cita.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { EditCitaComponent } from './citas/edit-cita/edit-cita.component';
 import { DeleteCitaComponent } from './citas/delete-cita/delete-cita.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,8 @@ import { DeleteCitaComponent } from './citas/delete-cita/delete-cita.component';
     CreateCitaComponent,
     EditCitaComponent,
     DeleteCitaComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

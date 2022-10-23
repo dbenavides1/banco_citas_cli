@@ -1,0 +1,39 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<br>
+<br>
+<br>
+<br>
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <!-- Tabs Titles -->
+
+        <!-- Icon -->
+        <div class="fadeIn first">
+            <img src="https://assets.nationbuilder.com/themes/5d1ad55ac2948011ce17704b/attachments/original/1553643295/login.png?1553643295"
+                id="icon" alt="User Icon" />
+        </div>
+
+        <!-- Login Form -->
+        <input type="text" id="login" class="fadeIn second" name="login" placeholder="Correo" #login>
+        <input type="password" id="password" class="fadeIn third" name="login" placeholder="Contraseña" #password>
+        <br>
+        <br>
+        <button type="submit" class="btn btn-primary px-5">
+            <a class="btn-link" (click)="validarUsuario(login.value,password.value)">
+                Ingresar
+            </a>
+        </button>
+        <br>
+        <br>
+
+        <!-- Remind Passowrd -->
+        <div id="formFooter">
+            <a class="underlineHover" href="register">Registrarse</a>
+        </div>
+
+    </div>
+</div>

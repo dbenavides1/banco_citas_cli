@@ -6,16 +6,26 @@ import { ContentLayoutComponent } from "./layouts/content/content-layout.compone
 
 import { Full_ROUTES } from "./shared/routes/full-layout.routes";
 import { CONTENT_ROUTES } from "./shared/routes/content-layout.routes";
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'dashboard/default',
+    redirectTo: 'login',
     pathMatch: 'full',
   },
+  {
+    path: 'login',
+    component: LoginComponent,  
+    },
+    {
+      path: 'register',
+      component: RegisterComponent
+      },
   { path: '', component: FullLayoutComponent, data: { title: 'full Views' }, children: Full_ROUTES },
   { path: '', component: ContentLayoutComponent, data: { title: 'content Views' }, children: CONTENT_ROUTES },
-  { path: '**', redirectTo: 'dashboard/default' }
+  { path: '**', redirectTo: 'dashboard/citas' }
 ];
 
 @NgModule({

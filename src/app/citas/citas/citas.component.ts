@@ -1,4 +1,3 @@
-//soyelandres
 import { Component, OnInit } from '@angular/core';
 import { CitasService } from '../../services/citas.service';
 

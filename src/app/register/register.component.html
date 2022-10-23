@@ -1,0 +1,52 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<br>
+<br>
+<div class="card">
+    <div class="card-body">
+        <form  (submit)="save()">
+            <div class="wrapper fadeInDown">
+                <div id="formContent">
+
+                    <div class="fadeIn first">
+                        <img src="https://assets.nationbuilder.com/themes/5d1ad55ac2948011ce17704b/attachments/original/1553643295/login.png?1553643295"
+                            id="icon" alt="User Icon" />
+                    </div>
+            
+                        <input type="text" class="form-control" id="nombres" formControlName="nombres" class="fadeIn first" name="nombres" placeholder="Nombres">
+                        <input type="text" class="form-control" id="apellidos" formControlName="apellidos" class="fadeIn first" name="apellidos" placeholder="Apellidos">
+                        <input type="text" class="form-control" id="tipo_dni" formControlName="tipo_dni" class="fadeIn first" name="tipo_dni" placeholder="Tipo de Dni">
+                        <input type="text" class="form-control" id="dni" formControlName="dni" class="fadeIn first" name="dni" placeholder="DNI">
+                        <input type="text" class="form-control" id="sexo" formControlName="sexo" class="fadeIn first" name="sexo" placeholder="Sexo">
+                        <input type="text" class="form-control" id="municipio" formControlName="municipio" class="fadeIn first" name="municipio" placeholder="Municipio">
+                        <input type="text" class="form-control" id="direccion" formControlName="direccion" class="fadeIn first" name="direccion" placeholder="Dirección">
+                        <input type="text" class="form-control" id="tel" formControlName="tel" class="fadeIn first" name="tel" placeholder="Teléfono">
+                        <input type="text" class="form-control" id="fec_nac" formControlName="fec_nac" class="fadeIn first" name="fec_nac" placeholder="Fecha de Nacimiento">
+                        <input type="text" class="form-control" id="email" formControlName="email" class="fadeIn first" name="email" placeholder="Correo">
+                        <input type="text" class="form-control" id="password" formControlName="password" class="fadeIn first" name="password" placeholder="Contraseña">
+                        <input type="text" class="form-control" id="rol" formControlName="rol" class="fadeIn first" name="rol" placeholder="Rol">
+                        <input type="text" class="form-control" id="fec_rec" formControlName="fec_rec" class="fadeIn first" name="fec_rec" placeholder="Fecha de Registro">
+                        <br>
+                        <br>
+                        <button type="submit" class="btn btn-primary px-5">
+                            <a type="submit" class="btn-link">
+                                Registrarse
+                            </a>
+                        </button>
+                        <br>
+                        <br>
+            
+                    <div id="formFooter">
+                        <a class="underlineHover" href="login">Iniciar Sesión</a>
+                    </div>
+            
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
