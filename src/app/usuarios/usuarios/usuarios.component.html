@@ -1,0 +1,55 @@
+<div class="card">
+    <div class="card-body">
+
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary px-5">
+                <a class="btn-link" href="dashboard/create-usuario">
+                    Nuevo Usuario
+                </a>
+            </button>
+        </div>
+
+        <br>
+
+        <table class="table mb-0 table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Nombres</th>
+                    <th scope="col">Apellidos</th>
+                    <th scope="col">Tipo DNI</th>
+                    <th scope="col">DNI</th>
+                    <th scope="col">Sexo</th>
+                    <th scope="col">Municipio</th>
+                    <th scope="col">Dirección</th>
+                    <th scope="col">Teléfono</th>
+                    <th scope="col">Nacimiento</th>
+                    <th scope="col">Correo</th>
+                    <th scope="col">Rol</th>
+                    <th scope="col">Registro</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let usuario of usuarios">
+                    <td>{{usuario.nombres}}</td>
+                    <td>{{usuario.apellidos}}</td>
+                    <td>{{usuario.tipo_dni}}</td>
+                    <td>{{usuario.dni}}</td>
+                    <td>{{usuario.sexo}}</td>
+                    <td>{{usuario.municipio}}</td>
+                    <td>{{usuario.direccion}}</td>
+                    <td>{{usuario.tel}}</td>
+                    <td>{{usuario.fec_nac}}</td>
+                    <td>{{usuario.email}}</td>
+                    <td>{{usuario.rol}}</td>
+                    <td>{{usuario.fec_reg}}</td>
+                    <td>
+                        <a href="dashboard/edit-usuario/{{usuario.id_usu}}">Editar</a>
+                    </td>
+                    <td>
+                        <a class="text-danger" (click)="deleteUsuario(usuario.id_usu)">Eliminar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

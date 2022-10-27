@@ -11,10 +11,17 @@ export class UsuariosService {
   constructor(
     protected http: HttpClient
   ) { }
+
   getUsuarios(): Observable<any> {
     let route = [environment.apiUrl, 'usuarios'].join('/');
     //http://localhost:3000/usuarios
     return this.http.get(route);
+  }
+
+  getUsuariosByEmail(usr: any): Observable<any> {
+    let route = [environment.apiUrl, 'usuarios/auth'].join('/');
+    //http://localhost:3000/usuarios/auth
+    return this.http.post(route, usr);
   }
 
   getUsuariosById(id: any): Observable<any> {

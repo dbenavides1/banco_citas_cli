@@ -12,24 +12,24 @@ import { RegisterComponent } from './register/register.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'dashboard/home',
     pathMatch: 'full',
   },
   {
     path: 'login',
-    component: LoginComponent,  
-    },
-    {
-      path: 'register',
-      component: RegisterComponent
-      },
+    component: LoginComponent,
+  },
+  {
+    path: 'register',
+    component: RegisterComponent
+  },
   { path: '', component: FullLayoutComponent, data: { title: 'full Views' }, children: Full_ROUTES },
   { path: '', component: ContentLayoutComponent, data: { title: 'content Views' }, children: CONTENT_ROUTES },
-  { path: '**', redirectTo: 'dashboard/citas' }
+  { path: '**', redirectTo: 'dashboard/home' }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {preloadingStrategy: PreloadAllModules})],
+  imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -1,35 +1,45 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { UsuariosService } from '../services/usuarios/usuarios.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+
 export class LoginComponent implements OnInit {
+  public formUser: FormGroup;
   is_error = false;
   usuario: any;
+
   constructor(
+    private formBuilder: FormBuilder,
     private router: Router,
     private usuariosService: UsuariosService,
   ) { }
+
   ngOnInit() {
+    this.formUser = this.formBuilder.group({
+      email: ['', [Validators.required]],
+      password: ['', [Validators.required]]
+    })
   }
-  validarUsuario(login:any,password:any) {
-    this.usuariosService.getUsuariosById(login).subscribe(
-      {
-        next: (data => {
-          if (data.email == login && data.password == password) {
-            this.is_error = false;
-            console.log(data);
-            this.router.navigate(['dashboard/citas']);
-          }
-          else {
-            this.is_error = true;
-          }
-        }),
-        error: (err => err)
-      }
-    );
+
+  validarUsuario(): any {
+    let alertWarning = document.getElementById("alert-warning");
+
+    this.usuariosService.getUsuariosByEmail(this.formUser.value).subscribe({
+      next: (data => {
+          console.log(data);
+          this.router.navigate(['dashboard/home']);
+      }),
+      //error: (err => err)
+      error: (err => {
+        console.log(err);
+        alertWarning.style.display="block";
+      })
+    });
   }
 }

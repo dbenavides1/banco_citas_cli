@@ -4,9 +4,13 @@ import { RouteInfo } from './sidebar.metadata';
 export const ROUTES: RouteInfo[] = [
 
     {
-        path: '', title: 'Dashboard', icon: 'bx bx-home-circle', class: 'sub', badge: '', badgeClass: '', isExternalLink: false, submenu: [
-            { path: '/dashboard/default', title: 'Default', icon: 'bx bx-right-arrow-alt', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
-            { path: '/dashboard/citas', title: 'Citas', icon: 'bx bx-right-arrow-alt', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
+        path: '', title: 'Dashboard', icon: 'bx bx-cube', class: 'sub open', badge: '', badgeClass: '', isExternalLink: false, submenu: [
+            { path: '/dashboard/home', title: 'Home', icon: 'bx bx-home-circle', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
+            { path: '/dashboard/citas', title: 'Citas', icon: 'bx bx-calendar-check', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
+            { path: '/dashboard/clientes', title: 'Clientes', icon: 'bx bx-user-pin', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
+            { path: '/dashboard/usuarios', title: 'Usuarios', icon: 'bx bx-user', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
+            { path: '/dashboard/ventanillas', title: 'Ventanillas', icon: 'bx bx-directions', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
+            { path: '/dashboard/pqrs', title: 'Pqrs', icon: 'bx bx-envelope', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
         ]
     },
     /*

@@ -10,17 +10,28 @@ import { HumanResourcesComponent } from './human-resources/human-resources.compo
 import { CitasComponent } from '../citas/citas/citas.component';
 import { CreateCitaComponent } from '../citas/create-cita/create-cita.component';
 import { EditCitaComponent } from '../citas/edit-cita/edit-cita.component';
-import { DeleteCitaComponent } from '../citas/delete-cita/delete-cita.component';
+import { ClientesComponent } from '../clientes/clientes/clientes.component';
+import { CreateClienteComponent } from '../clientes/create-cliente/create-cliente.component';
+import { EditClienteComponent } from '../clientes/edit-cliente/edit-cliente.component';
+import { PqrsComponent } from '../pqrs/pqrs/pqrs.component';
+import { CreatePqrsComponent } from '../pqrs/create-pqrs/create-pqrs.component';
+import { EditPqrsComponent } from '../pqrs/edit-pqrs/edit-pqrs.component';
+import { UsuariosComponent } from '../usuarios/usuarios/usuarios.component';
+import { CreateUsuarioComponent } from '../usuarios/create-usuario/create-usuario.component';
+import { EditUsuarioComponent } from '../usuarios/edit-usuario/edit-usuario.component';
+import { VentanillasComponent } from '../ventanillas/ventanillas/ventanillas.component';
+import { CreateVentanillaComponent } from '../ventanillas/create-ventanilla/create-ventanilla.component';
+import { EditVentanillaComponent } from '../ventanillas/edit-ventanilla/edit-ventanilla.component';
 
 const routes: Routes = [
   {
     path: '',
     children: [
       {
-        path: 'default',
+        path: 'home',
         component: DefaultComponent,
         data: {
-          title: 'Default'
+          title: 'Home'
         }
       },
       {
@@ -45,10 +56,87 @@ const routes: Routes = [
         }
       },
       {
-        path: 'delete-cita/:id',
-        component: DeleteCitaComponent,
+        path: 'clientes',
+        component: ClientesComponent,
         data: {
-          title: 'Delete Cita'
+          title: 'Clientes'
+        }
+      },
+      {
+        path: 'create-cliente',
+        component: CreateClienteComponent,
+        data: {
+          title: 'Create Cliente'
+        }
+      },
+      {
+        path: 'edit-cliente/:id',
+        component: EditClienteComponent,
+        data: {
+          title: 'Edit Cliente'
+        }
+      },
+      {
+        path: 'pqrs',
+        component: PqrsComponent,
+        data: {
+          title: 'Pqrs'
+        }
+      },
+      {
+        path: 'create-pqrs',
+        component: CreatePqrsComponent,
+        data: {
+          title: 'Create Pqrs'
+        }
+      },
+      {
+        path: 'edit-pqrs/:id',
+        component: EditPqrsComponent,
+        data: {
+          title: 'Edit Pqrs'
+        }
+      },
+      {
+        path: 'usuarios',
+        component: UsuariosComponent,
+        data: {
+          title: 'Usuarios'
+        }
+      },
+      {
+        path: 'create-usuario',
+        component: CreateUsuarioComponent,
+        data: {
+          title: 'Create Usuario'
+        }
+      },
+      {
+        path: 'edit-usuario/:id',
+        component: EditUsuarioComponent,
+        data: {
+          title: 'Edit Usuario'
+        }
+      },
+      {
+        path: 'ventanillas',
+        component: VentanillasComponent,
+        data: {
+          title: 'Ventanillas'
+        }
+      },
+      {
+        path: 'create-ventanilla',
+        component: CreateVentanillaComponent,
+        data: {
+          title: 'Create Ventanilla'
+        }
+      },
+      {
+        path: 'edit-ventanilla/:id',
+        component: EditVentanillaComponent,
+        data: {
+          title: 'Edit Ventanilla'
         }
       },
       /*

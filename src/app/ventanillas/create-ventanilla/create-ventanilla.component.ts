@@ -1,46 +1,41 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { CitasService } from 'src/app/services/citas/citas.service';
+import { VentanillasService } from 'src/app/services/ventanillas/ventanillas.service';
 
 @Component({
-  selector: 'app-create-cita',
-  templateUrl: './create-cita.component.html',
-  styleUrls: ['./create-cita.component.scss']
+  selector: 'app-create-ventanilla',
+  templateUrl: './create-ventanilla.component.html',
+  styleUrls: ['./create-ventanilla.component.scss']
 })
-export class CreateCitaComponent implements OnInit {
+export class CreateVentanillaComponent implements OnInit {
 
-  public formCita: FormGroup;
+  public formVentanilla: FormGroup;
 
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    private citaService: CitasService
+    private ventanillaService: VentanillasService
   ) { }
 
   ngOnInit(): void {
-    this.formCita = this.formBuilder.group({
-      id_clie: ['', [Validators.required]],
-      id_usu: ['', [Validators.required]],
-      id_ventanilla: ['', [Validators.required]],
-      fec_cita: ['', [Validators.required]],
-      hora: ['', [Validators.required]],
-      estado: ['', [Validators.required]],
+    this.formVentanilla = this.formBuilder.group({
+      nom_ventanilla: ['', [Validators.required]]
     })
   }
 
   save(): any {
-    console.log(this.formCita.value);
+    console.log(this.formVentanilla.value);
     let alertSuccess = document.getElementById("alert-success");
     let alertDanger = document.getElementById("alert-danger");
 
-    this.citaService.addCitas(this.formCita.value).subscribe({
+    this.ventanillaService.addVentanillas(this.formVentanilla.value).subscribe({
       next: (data => {
         console.log(data);
         alertDanger.style.display="none";
         alertSuccess.style.display="block";
         setTimeout(() => {  
-          this.router.navigate(['dashboard/citas']);
+          this.router.navigate(['dashboard/ventanillas']);
         }, 3000);
       }),
       error: (err => {

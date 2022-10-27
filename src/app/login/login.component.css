@@ -1,4 +1,7 @@
 /* BASIC */
+.alert {
+  display: none;
+}
 
 html {
     background-color: #56baed;

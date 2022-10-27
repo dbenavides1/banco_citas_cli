@@ -1,0 +1,33 @@
+<div class="card">
+    <div class="card-body">
+
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary px-5">
+                <a class="btn-link" href="dashboard/create-ventanilla">
+                    Nueva Ventanilla
+                </a>
+            </button>
+        </div>
+
+        <br>
+
+        <table class="table mb-0 table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre Ventanilla</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let ventanilla of ventanillas">
+                    <td>{{ventanilla.nom_ventanilla}}</td>
+                    <td>
+                        <a href="dashboard/edit-ventanilla/{{ventanilla.id_ventanilla}}">Editar</a>
+                    </td>
+                    <td>
+                        <a class="text-danger" (click)="deleteVentanilla(ventanilla.id_ventanilla)">Eliminar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

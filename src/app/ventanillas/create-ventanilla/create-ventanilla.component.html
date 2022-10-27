@@ -1,0 +1,42 @@
+<div class="alert alert-success border-0 bg-success alert-dismissible fade show py-2" id="alert-success">
+    <div class="d-flex align-items-center">
+        <div class="font-35 text-white"><i class='bx bxs-check-circle'></i>
+        </div>
+        <div class="ms-3">
+            <h6 class="mb-0 text-white">Ventanilla Registrada</h6>
+            <div class="text-white">Redireccionando...</div>
+        </div>
+    </div>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+<div class="alert alert-danger border-0 bg-danger alert-dismissible fade show py-2" id="alert-danger">
+    <div class="d-flex align-items-center">
+        <div class="font-35 text-white"><i class='bx bxs-message-square-x'></i>
+        </div>
+        <div class="ms-3">
+            <h6 class="mb-0 text-white">Error de Registro</h6>
+            <div class="text-white">Verifique los Datos</div>
+        </div>
+    </div>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+<h6 class="mb-0 text-uppercase">Nueva Ventanilla</h6>
+<hr />
+<div class="card">
+    <div class="card-body">
+        <form [formGroup]="formVentanilla" (submit)="save()">
+
+            <div class="mb-3">
+                <label class="form-label">Nombre de Ventanilla</label>
+                <input type="text" class="form-control" formControlName="nom_ventanilla" id="nom_ventanilla">
+            </div>
+            <div>
+                <button [disabled]="formVentanilla.invalid" type="submit" class="btn btn-primary px-5 mx-auto d-block">
+                    Guardar
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

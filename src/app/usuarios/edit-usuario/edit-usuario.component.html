@@ -1,0 +1,90 @@
+<div class="alert alert-success border-0 bg-success alert-dismissible fade show py-2" id="alert-success">
+    <div class="d-flex align-items-center">
+        <div class="font-35 text-white"><i class='bx bxs-check-circle'></i>
+        </div>
+        <div class="ms-3">
+            <h6 class="mb-0 text-white">Usuario Registrado</h6>
+            <div class="text-white">Redireccionando...</div>
+        </div>
+    </div>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+<div class="alert alert-danger border-0 bg-danger alert-dismissible fade show py-2" id="alert-danger">
+    <div class="d-flex align-items-center">
+        <div class="font-35 text-white"><i class='bx bxs-message-square-x'></i>
+        </div>
+        <div class="ms-3">
+            <h6 class="mb-0 text-white">Error de Registro</h6>
+            <div class="text-white">Verifique los Datos</div>
+        </div>
+    </div>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+<h6 class="mb-0 text-uppercase">Nuevo Usuario</h6>
+<hr />
+<div class="card">
+    <div class="card-body">
+        <form [formGroup]="formUsuario" (submit)="save()">
+
+            <div class="mb-3">
+                <label class="form-label">Nombres</label>
+                <input type="text" class="form-control" formControlName="nombres" id="nombres">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Apellidos</label>
+                <input type="text" class="form-control" formControlName="apellidos" id="apellidos">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Tipo DNI</label>
+                <input type="text" class="form-control" formControlName="tipo_dni" id="tipo_dni">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">DNI</label>
+                <input type="text" class="form-control" formControlName="dni" id="dni">
+            </div>
+            <label class="form-label">Sexo Biológico</label>
+            <select class="form-select mb-3" formControlName="sexo" id="sexo">
+                <option value="" selected>Seleccione</option>
+                <option value="true">Masculino</option>
+                <option value="false">Femenino</option>
+            </select>
+            <div class="mb-3">
+                <label class="form-label">Municipio</label>
+                <input type="text" class="form-control" formControlName="municipio" id="municipio">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Dirección</label>
+                <input type="text" class="form-control" formControlName="direccion" id="direccion">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Teléfono</label>
+                <input type="text" class="form-control" formControlName="tel" id="tel">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Fecha Nacimiento</label>
+                <input type="date" class="form-control" formControlName="fec_nac" id="fec_nac">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Correo</label>
+                <input type="text" class="form-control" formControlName="email" id="email">
+            </div>
+            <label class="form-label">Rol</label>
+            <select class="form-select mb-3" formControlName="rol" id="rol">
+                <option value="" selected>Seleccione</option>
+                <option value="empleado">Empleado del Banco</option>
+                <option value="administrador">Administrador</option>
+            </select>
+            <div class="mb-3">
+                <label class="form-label">Contraseña</label>
+                <input type="password" class="form-control" formControlName="password" id="password">
+            </div>
+            <div>
+                <button [disabled]="formUsuario.invalid" type="submit" class="btn btn-primary px-5 mx-auto d-block">
+                    Guardar
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

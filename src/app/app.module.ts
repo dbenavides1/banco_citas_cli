@@ -29,9 +29,20 @@ import { CitasComponent } from './citas/citas/citas.component';
 import { CreateCitaComponent } from './citas/create-cita/create-cita.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { EditCitaComponent } from './citas/edit-cita/edit-cita.component';
-import { DeleteCitaComponent } from './citas/delete-cita/delete-cita.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { UsuariosComponent } from './usuarios/usuarios/usuarios.component';
+import { CreateUsuarioComponent } from './usuarios/create-usuario/create-usuario.component';
+import { EditUsuarioComponent } from './usuarios/edit-usuario/edit-usuario.component';
+import { ClientesComponent } from './clientes/clientes/clientes.component';
+import { CreateClienteComponent } from './clientes/create-cliente/create-cliente.component';
+import { EditClienteComponent } from './clientes/edit-cliente/edit-cliente.component';
+import { PqrsComponent } from './pqrs/pqrs/pqrs.component';
+import { CreatePqrsComponent } from './pqrs/create-pqrs/create-pqrs.component';
+import { EditPqrsComponent } from './pqrs/edit-pqrs/edit-pqrs.component';
+import { VentanillasComponent } from './ventanillas/ventanillas/ventanillas.component';
+import { CreateVentanillaComponent } from './ventanillas/create-ventanilla/create-ventanilla.component';
+import { EditVentanillaComponent } from './ventanillas/edit-ventanilla/edit-ventanilla.component';
 
 @NgModule({
   declarations: [
@@ -41,9 +52,20 @@ import { RegisterComponent } from './register/register.component';
     CitasComponent,
     CreateCitaComponent,
     EditCitaComponent,
-    DeleteCitaComponent,
     LoginComponent,
     RegisterComponent,
+    UsuariosComponent,
+    CreateUsuarioComponent,
+    EditUsuarioComponent,
+    ClientesComponent,
+    CreateClienteComponent,
+    EditClienteComponent,
+    PqrsComponent,
+    CreatePqrsComponent,
+    EditPqrsComponent,
+    VentanillasComponent,
+    CreateVentanillaComponent,
+    EditVentanillaComponent,
   ],
   imports: [
     BrowserModule,

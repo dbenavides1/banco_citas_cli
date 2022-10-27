@@ -36,7 +36,7 @@
                         <a href="dashboard/edit-cita/{{cita.id_cita}}">Editar</a>
                     </td>
                     <td>
-                        <a class="text-danger" href="dashboard/delete-cita/{{cita.id_cita}}">Eliminar</a>
+                        <a class="text-danger" (click)="deleteCita(cita.id_cita)">Eliminar</a>
                     </td>
                 </tr>
             </tbody>

@@ -1,0 +1,61 @@
+<div class="alert alert-success border-0 bg-success alert-dismissible fade show py-2" id="alert-success">
+    <div class="d-flex align-items-center">
+        <div class="font-35 text-white"><i class='bx bxs-check-circle'></i>
+        </div>
+        <div class="ms-3">
+            <h6 class="mb-0 text-white">Pqrs Registrado</h6>
+            <div class="text-white">Redireccionando...</div>
+        </div>
+    </div>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+<div class="alert alert-danger border-0 bg-danger alert-dismissible fade show py-2" id="alert-danger">
+    <div class="d-flex align-items-center">
+        <div class="font-35 text-white"><i class='bx bxs-message-square-x'></i>
+        </div>
+        <div class="ms-3">
+            <h6 class="mb-0 text-white">Error de Registro</h6>
+            <div class="text-white">Verifique los Datos</div>
+        </div>
+    </div>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+<h6 class="mb-0 text-uppercase">Nuevo Pqrs</h6>
+<hr />
+<div class="card">
+    <div class="card-body">
+        <form [formGroup]="formPqrs" (submit)="save()">
+
+            <div class="mb-3">
+                <label class="form-label">Cliente</label>
+                <input type="text" class="form-control" formControlName="id_clie" id="id_clie">
+            </div>
+            <label class="form-label">Tipo</label>
+            <select class="form-select mb-3" formControlName="tipo" id="tipo">
+                <option value="" selected>Seleccione</option>
+                <option value="peticion">Petición</option>
+                <option value="queja">Queja</option>
+                <option value="reclamo">Reclamo</option>
+                <option value="sugerencia">Sugerencia</option>
+            </select>
+            <label class="form-label">Estado</label>
+            <select class="form-select mb-3" formControlName="estado" id="estado">
+                <option value="pendiente" selected>Pendiente</option>
+                <option value="atendida">Atendida</option>
+                <option value="no atendida">No Atendida</option>
+                <option value="cancelada">Cancelada</option>
+            </select>
+            <div class="mb-3">
+                <label class="form-label">Mensaje</label>
+                <input type="text" class="form-control" formControlName="mensaje" id="mensaje">
+            </div>
+            <div>
+                <button [disabled]="formPqrs.invalid" type="submit" class="btn btn-primary px-5 mx-auto d-block">
+                    Guardar
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

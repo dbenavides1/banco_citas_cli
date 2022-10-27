@@ -1,0 +1,53 @@
+<div class="card">
+    <div class="card-body">
+
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary px-5">
+                <a class="btn-link" href="dashboard/create-cliente">
+                    Nuevo Cliente
+                </a>
+            </button>
+        </div>
+
+        <br>
+
+        <table class="table mb-0 table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Nombres</th>
+                    <th scope="col">Apellidos</th>
+                    <th scope="col">Tipo DNI</th>
+                    <th scope="col">DNI</th>
+                    <th scope="col">Sexo</th>
+                    <th scope="col">Municipio</th>
+                    <th scope="col">Dirección</th>
+                    <th scope="col">Teléfono</th>
+                    <th scope="col">Nacimiento</th>
+                    <th scope="col">Correo</th>
+                    <th scope="col">Registro</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let cliente of clientes">
+                    <td>{{cliente.nombres}}</td>
+                    <td>{{cliente.apellidos}}</td>
+                    <td>{{cliente.tipo_dni}}</td>
+                    <td>{{cliente.dni}}</td>
+                    <td>{{cliente.sexo}}</td>
+                    <td>{{cliente.municipio}}</td>
+                    <td>{{cliente.direccion}}</td>
+                    <td>{{cliente.tel}}</td>
+                    <td>{{cliente.fec_nac}}</td>
+                    <td>{{cliente.email}}</td>
+                    <td>{{cliente.fec_reg}}</td>
+                    <td>
+                        <a href="dashboard/edit-cliente/{{cliente.id_clie}}">Editar</a>
+                    </td>
+                    <td>
+                        <a class="text-danger" (click)="deleteCliente(cliente.id_clie)">Eliminar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

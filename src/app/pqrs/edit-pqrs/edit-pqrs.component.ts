@@ -1,50 +1,46 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { CitasService } from 'src/app/services/citas/citas.service';
+import { PqrsService } from 'src/app/services/pqrs/pqrs.service';
 
 @Component({
-  selector: 'app-edit-cita',
-  templateUrl: './edit-cita.component.html',
-  styleUrls: ['./edit-cita.component.scss']
+  selector: 'app-edit-pqrs',
+  templateUrl: './edit-pqrs.component.html',
+  styleUrls: ['./edit-pqrs.component.scss']
 })
-export class EditCitaComponent implements OnInit {
+export class EditPqrsComponent implements OnInit {
 
-  public formCita: FormGroup;
+  public formPqrs: FormGroup;
   public id = '';
 
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private formBuilder: FormBuilder,
-    private citaService: CitasService
+    private pqrsService: PqrsService
   ) {
     this.id = this.activatedRoute.snapshot.params['id'];
   }
 
   ngOnInit(): void {
-    this.formCita = this.formBuilder.group({
+    this.formPqrs = this.formBuilder.group({
       id_clie: ['', [Validators.required]],
-      id_usu: ['', [Validators.required]],
-      id_ventanilla: ['', [Validators.required]],
-      fec_cita: ['', [Validators.required]],
-      hora: ['', [Validators.required]],
+      tipo: ['', [Validators.required]],
       estado: ['', [Validators.required]],
+      mensaje: ['', [Validators.required]]
     })
 
-    //traemos la cita de la BD
-    let citas = this.citaService.getCitasById(this.id).subscribe({
+    //traemos la pqrs de la BD
+    let pqrs = this.pqrsService.getPqrsById(this.id).subscribe({
       next: (data => {
         console.log(data);
 
         //valores por defecto:
-        this.formCita.patchValue({
+        this.formPqrs.patchValue({
           id_clie: data.id_clie,
-          id_usu: data.id_usu,
-          id_ventanilla: data.id_ventanilla,
-          fec_cita: data.fec_cita,
-          hora: data.hora,
-          estado: data.estado
+          tipo: data.tipo,
+          estado: data.estado,
+          mensaje: data.mensaje
         })
 
       }),
@@ -55,17 +51,17 @@ export class EditCitaComponent implements OnInit {
   }
 
   save() {
-    console.log(this.formCita.value);
+    console.log(this.formPqrs.value);
     let alertSuccess = document.getElementById("alert-success");
     let alertDanger = document.getElementById("alert-danger");
 
-    this.citaService.editCitas(this.formCita.value, this.id).subscribe({
+    this.pqrsService.editPqrs(this.formPqrs.value, this.id).subscribe({
       next: (data => {
         console.log(data);
         alertDanger.style.display="none";
         alertSuccess.style.display="block";
         setTimeout(() => {
-          this.router.navigate(['dashboard/citas']);
+          this.router.navigate(['dashboard/pqrs']);
         }, 3000);
       }),
       error: (err => {
@@ -74,4 +70,5 @@ export class EditCitaComponent implements OnInit {
       })
     })
   }
+
 }

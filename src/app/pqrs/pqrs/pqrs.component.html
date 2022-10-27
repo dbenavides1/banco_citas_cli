@@ -1,0 +1,41 @@
+<div class="card">
+    <div class="card-body">
+
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary px-5">
+                <a class="btn-link" href="dashboard/create-pqrs">
+                    Nuevo PQRS
+                </a>
+            </button>
+        </div>
+
+        <br>
+
+        <table class="table mb-0 table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Cliente</th>
+                    <th scope="col">Tipo</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">Registro</th>
+                    <th scope="col">Mensaje</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let pqr of pqrs">
+                    <td>{{pqr.id_clie}}</td>
+                    <td>{{pqr.tipo}}</td>
+                    <td>{{pqr.estado}}</td>
+                    <td>{{pqr.fec_reg}}</td>
+                    <td>{{pqr.mensaje}}</td>
+                    <td>
+                        <a href="dashboard/edit-pqrs/{{pqr.id_pqrs}}">Editar</a>
+                    </td>
+                    <td>
+                        <a class="text-danger" (click)="deletePqrs(pqr.id_pqrs)">Eliminar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

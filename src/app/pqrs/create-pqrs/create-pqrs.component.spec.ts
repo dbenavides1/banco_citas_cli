@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DeleteCitaComponent } from './delete-cita.component';
+import { CreatePqrsComponent } from './create-pqrs.component';
 
-describe('DeleteCitaComponent', () => {
-  let component: DeleteCitaComponent;
-  let fixture: ComponentFixture<DeleteCitaComponent>;
+describe('CreatePqrsComponent', () => {
+  let component: CreatePqrsComponent;
+  let fixture: ComponentFixture<CreatePqrsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DeleteCitaComponent ]
+      declarations: [ CreatePqrsComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DeleteCitaComponent);
+    fixture = TestBed.createComponent(CreatePqrsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

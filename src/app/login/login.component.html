@@ -18,17 +18,30 @@
         </div>
 
         <!-- Login Form -->
-        <input type="text" id="login" class="fadeIn second" name="login" placeholder="Correo" #login>
-        <input type="password" id="password" class="fadeIn third" name="login" placeholder="Contraseña" #password>
-        <br>
-        <br>
-        <button type="submit" class="btn btn-primary px-5">
-            <a class="btn-link" (click)="validarUsuario(login.value,password.value)">
+        <form [formGroup]="formUser" (submit)="validarUsuario()">
+            <input type="text" id="login" class="fadeIn second" formControlName="email" name="login" placeholder="Correo" #login>
+            <input type="password" id="password" class="fadeIn third" formControlName="password" name="login" placeholder="Contraseña" #password>
+            <br>
+            <br>
+            <button [disabled]="formUser.invalid" type="submit" class="btn btn-primary px-5">
                 Ingresar
-            </a>
-        </button>
+            </button>
+        </form>
         <br>
         <br>
+
+        <!-- Alert -->
+        <div class="alert alert-warning border-0 bg-warning alert-dismissible fade show py-2" id="alert-warning">
+            <div class="d-flex align-items-center">
+                <div class="font-35 text-dark"><i class='bx bx-info-circle'></i>
+                </div>
+                <div class="ms-3">
+                    <h6 class="mb-0 text-dark">Información</h6>
+                    <div class="text-dark">Correo o contraseña incorrectos!</div>
+                </div>
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
 
         <!-- Remind Passowrd -->
         <div id="formFooter">
