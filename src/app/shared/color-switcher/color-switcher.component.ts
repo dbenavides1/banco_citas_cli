@@ -43,6 +43,7 @@ export class ColorSwitcherComponent implements OnInit {
     
     // sidebar colors 
 
+    $('html').attr('class', 'color-sidebar sidebarcolor4'); //default
 
     $('#sidebarcolor1').click(theme1);
     $('#sidebarcolor2').click(theme2);

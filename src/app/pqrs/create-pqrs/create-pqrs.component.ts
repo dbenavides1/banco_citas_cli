@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { PqrsService } from 'src/app/services/pqrs/pqrs.service';
+import { ClientesService } from 'src/app/services/clientes/clientes.service';
 
 @Component({
   selector: 'app-create-pqrs',
@@ -11,11 +12,13 @@ import { PqrsService } from 'src/app/services/pqrs/pqrs.service';
 export class CreatePqrsComponent implements OnInit {
 
   public formPqrs: FormGroup;
+  public clientes: any;
 
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    private pqrsService: PqrsService
+    private pqrsService: PqrsService,
+    private cli: ClientesService
   ) { }
 
   ngOnInit(): void {
@@ -25,6 +28,15 @@ export class CreatePqrsComponent implements OnInit {
       estado: ['', [Validators.required]],
       mensaje: ['', [Validators.required]]
     })
+
+    //clientes
+    let clientes = this.cli.getClientes().subscribe({
+      next: (data => {
+        this.clientes = data;
+        console.log(data);
+      }),
+      error: (err => err)
+    });
   }
 
   save(): any {
