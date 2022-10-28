@@ -28,10 +28,15 @@
     <div class="card-body">
         <form [formGroup]="formPqrs" (submit)="save()">
 
-            <div class="mb-3">
+            <!-- <div class="mb-3">
                 <label class="form-label">Cliente</label>
                 <input type="text" class="form-control" formControlName="id_clie" id="id_clie">
-            </div>
+            </div> -->
+            <label class="form-label">Cliente</label>
+            <input list="clientes" class="form-control" formControlName="id_clie" id="id_clie">
+            <datalist id="clientes">
+                <option *ngFor="let cliente of clientes" value="{{cliente.id_clie}}">{{cliente.dni}}</option>
+            </datalist>
             <label class="form-label">Tipo</label>
             <select class="form-select mb-3" formControlName="tipo" id="tipo">
                 <option value="" selected>Seleccione</option>
